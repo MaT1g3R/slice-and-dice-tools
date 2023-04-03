@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "slice-and-dice-tools"
+version = "0.1.0"
+description = ""
+authors = ["Peijun Ma <peijun.ma@protonmail.com>"]
+license = "Apache2.0"
+readme = "README.md"
+packages = [{include = "slice_and_dice_tools"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+ruff = "^0.0.260"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+select = [
+    "I",
+    "F",
+    "E",
+]
