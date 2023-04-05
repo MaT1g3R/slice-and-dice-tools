@@ -1,0 +1,9 @@
+githubRepoOwner: MaT1g3R
+githubRepoName: slice-and-dice-tools
+githubHost: github.com
+requireChecks: false
+requireApproval: false
+githubRemote: origin
+githubBranch: master
+remoteBranches: []
+mergeMethod: rebase
