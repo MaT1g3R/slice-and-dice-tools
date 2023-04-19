@@ -28,7 +28,12 @@ class FileWatcher:
 
 
 def write_curses(file, out_file, gamemode):
-    tree = ET.parse(file)
+    try:
+        tree = ET.parse(file)
+    except Exception as e:
+        print(e)
+        return
+
     root = tree.getroot()
     for node in root:
         tag = node.tag
