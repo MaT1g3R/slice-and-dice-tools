@@ -9,8 +9,8 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"strings"
 	"time"
-    "strings"
 )
 
 type FileWatcher struct {
@@ -75,17 +75,17 @@ func writeCurses(file string, out_file string, gamemode string) {
 	defer xmlFile.Close()
 
 	byteValue, err := ioutil.ReadAll(xmlFile)
-    if err != nil {
+	if err != nil {
 		fmt.Println(err)
 		return
-    }
+	}
 
 	var prefs SliceAndDicePrefs
 	err = xml.Unmarshal(byteValue, &prefs)
-    if err != nil {
+	if err != nil {
 		fmt.Println(err)
 		return
-    }
+	}
 
 	var curses []string
 	for _, entry := range prefs.Entries {
@@ -99,12 +99,12 @@ func writeCurses(file string, out_file string, gamemode string) {
 		}
 	}
 
-    out := strings.Join(curses, "\n")
-    err = ioutil.WriteFile(out_file, []byte(out), os.ModePerm)
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
+	out := strings.Join(curses, "\n")
+	err = ioutil.WriteFile(out_file, []byte(out), os.ModePerm)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 }
 
 func main() {
